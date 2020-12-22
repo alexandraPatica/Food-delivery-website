@@ -10,7 +10,7 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	
-<body>
+<body class="about-img">
 	<header id="header" class='header-scrolled'>
 		<div id="logo">
         <h1><a href="index.html" class="scrollto">FoodXpert</a></h1>
@@ -28,41 +28,94 @@
 					  <div id="link1" class="dItem" href="#">Link 1
 						<!--  Inside Dropdown -->
 						<div class="dropdown-two">
-						  <div class="dItem" id="file" href="#">Import</div>
+						  <a href="category.html"><div class="dItem" id="file" href="category.html">Import</div></a>
 						</div>
 					  </div>
-					  <div class="dItem" href="#">Link 2</div>
-					  <div class="dItem" href="#">Link 3</div>
+					  <a href="category.html"><div class="dItem" href="category.html">Link 2</div></a>
+					  <a href="category.html"><div class="dItem" href="category.html">Link 3</div></a>
 					</div>
 				  </div> 
 			</li>
           
-		  <li><button class="dropbtn" onclick="openForm()">Log In</button></li>
-          <li><button class="dropbtn" onclick="openForm_reg()">Sign Up</button></li>
-		  <li><a href="index.html">About Us</a></li>
+		   <li><button id="myBtn" class="dropbtn" >Log In</button></li>
+          <li><a href="register.html">Register</a></li>
+		  <li><a href="about.html">About Us</a></li>
+		  <li><a href="cart.html">Cart</a></li>
         </ul>
       </nav>
 	</div>
 		
 	</header>
 	
+	<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+			  <!-- Modal content -->
+			  <div class="modal-content">
+				<span class="close">&times;</span>
+				
+				
+				  <form action="/action_page.php" class="form-container">
+					<h1>Login</h1>
+
+					<label for="email"><b>Email</b></label>
+					<input type="text" placeholder="Enter Email" name="email" required>
+
+					<label for="psw"><b>Password</b></label>
+					<input type="password" placeholder="Enter Password" name="psw" required>
+
+					<button type="submit" class="btn1">Login</button>
+				  </form>
+				
+			  </div>
+
+			</div>
+	
 	<div class="works" id="work">
 				<div class="container">
 					<!-- default heading -->
 					<div class="default-heading">
 						<!-- heading -->
-						<h2>About Us</h2>
+						<h2 style="color: white; font-family: "Eras ITC", "Eras Bold ITC",  sans-serif ;">About Us</h2>
 						<br><br><br><br>
 						<!-- paragraph -->
 						<div class="columns">
-						<p>We are a restaurant which sells food and drinks. The food is of good quality and the delivery is very fast. We make everything possible for our clients. You can search us on Facebook, Instagram and Twitter.</p>
-						<p>Email: food@expert.com Phone: 5423147895 We are open for job applications!</p><br>
-						<p>Address: Food Street, no 10, Foodland</p>
+						<p style="color: white;">We are a restaurant which sells food and drinks. The food is of good quality and the delivery is very fast. We make everything possible for our clients. You can search us on Facebook, Instagram and Twitter.</p>
+						<p style="color: white;">Email: food@expert.com Phone: 5423147895 We are open for job applications!</p><br>
+						<p style="color: white;">Address: Food Street, no 10, Foodland</p>
 						</div>
 					</div>
 				</div>
 			</div>
 	
+	<script>
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on the button, open the modal
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+	
+	
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
+</script>
 </body>
 
 </html>
