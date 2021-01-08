@@ -10,8 +10,9 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	
-<body class="about-img">
+<body>
 	<?php include 'include/header.php';?>
+	<?php include 'include/dbconnect.php';?>
 	
 	<!-- The Modal -->
 			<div id="myModal" class="modal">
@@ -36,25 +37,38 @@
 			  </div>
 
 			</div>
+		
+		
+<?php		
+	$sql = "SELECT * FROM product WHERE product_id =" .$_GET['id'].";";
+	$result1 = $conn->query($sql);
 	
-	<div class="works" id="work">
-				<div class="container">
-					<!-- default heading -->
-					<div class="default-heading">
-						<!-- heading -->
-						<h2 style="color: white; font-family: "Eras ITC", "Eras Bold ITC",  sans-serif ;">About Us</h2>
-						<br><br><br><br>
-						<!-- paragraph -->
-						<div class="columns">
-						<p style="color: white;">We are a restaurant which sells food and drinks. The food is of good quality and the delivery is very fast. We make everything possible for our clients. You can search us on Facebook, Instagram and Twitter.</p>
-						<p style="color: white;">Email: food@expert.com Phone: 5423147895 We are open for job applications!</p><br>
-						<p style="color: white;">Address: Food Street, no 10, Foodland</p>
+	if ($result1->num_rows > 0) {
+		while($row = $result1->fetch_assoc()){
+			echo
+			'<!-- products -->
+					<div class="works" id="work">
+						<div class="container">
+							<!-- default heading -->
+							<div class="default-heading">
+								<!-- heading -->
+								<h2>'.$row["product_name"].'</h2>
+								<!-- paragraph -->
+								<p>There are now a set available here in three<br>colours and in a banner sizes.</p>
+							</div>
+							
+							<div style="margin: 100px;">
+							<img src="'.$row["image"].'" alt="Smiley face" style="float:left;width:400px;height:400px;">
+							<p>Ingredients: '.$row["ingredients"].'</p>
+							<p>Price: $'.$row["product_price"].'</p>
+							<button class="dropbtn">Add to Cart</button>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-	
-	<script>
+				</div>';
+		}
+	}
+?>
+		<script>
 	var modal = document.getElementById("myModal");
 
 	// Get the button that opens the modal

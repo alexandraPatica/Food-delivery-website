@@ -1,3 +1,5 @@
+
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -10,8 +12,10 @@
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	
-<body class="about-img">
+<body class="reg-img">
 	<?php include 'include/header.php';?>
+	<?php include 'include/dbconnect.php';?>
+	
 	
 	<!-- The Modal -->
 			<div id="myModal" class="modal">
@@ -21,7 +25,7 @@
 				<span class="close">&times;</span>
 				
 				
-				  <form action="/action_page.php" class="form-container">
+				  <form action="/Food-delivery-website/action_page.php" class="form-container">
 					<h1>Login</h1>
 
 					<label for="email"><b>Email</b></label>
@@ -36,25 +40,44 @@
 			  </div>
 
 			</div>
+			
+			
 	
 	<div class="works" id="work">
 				<div class="container">
-					<!-- default heading -->
 					<div class="default-heading">
-						<!-- heading -->
-						<h2 style="color: white; font-family: "Eras ITC", "Eras Bold ITC",  sans-serif ;">About Us</h2>
-						<br><br><br><br>
-						<!-- paragraph -->
-						<div class="columns">
-						<p style="color: white;">We are a restaurant which sells food and drinks. The food is of good quality and the delivery is very fast. We make everything possible for our clients. You can search us on Facebook, Instagram and Twitter.</p>
-						<p style="color: white;">Email: food@expert.com Phone: 5423147895 We are open for job applications!</p><br>
-						<p style="color: white;">Address: Food Street, no 10, Foodland</p>
-						</div>
 					</div>
+					<form id="regForm">
+					
+					<?php
+					
+					$sql = "SELECT user_name FROM user WHERE user_name ='".$_POST["uname"]."';";
+					$result1 = $conn->query($sql);
+					
+					if ($result1->num_rows > 0){
+						echo '<h1>Username "'.$_POST["uname"].'" already exists!';
+					}
+					else{
+						$sql2 = "INSERT INTO user (user_name, user_password, user_first_name, user_last_name, user_contact, user_address)
+						VALUES ('".$_POST["uname"]."', '".$_POST["pword"]."', '".$_POST["fname"]."', '".$_POST["lname"]."','"
+						.$_POST["phone"]."','".$_POST["address"]."')";
+
+						if ($conn->query($sql2) === TRUE) {
+						  echo '<h1>Welcome '.$_POST["fname"].'</h1><br>
+								<h1>You have been successfully registered!</h1>';
+						} else {
+						  echo "Error: " . $conn->error;
+						}
+					}
+					?>
+					</form>
 				</div>
 			</div>
-	
-	<script>
+			
+			
+
+			
+<script>
 	var modal = document.getElementById("myModal");
 
 	// Get the button that opens the modal

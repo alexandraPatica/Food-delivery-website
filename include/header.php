@@ -1,27 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "food_delivery";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+ include 'include/dbconnect.php';
 
 echo '<header id="header" class="header-scrolled">
 		<div id="logo">
-        <h1><a href="index.html" class="scrollto">FoodXpert</a></h1>
+        <h1><a href="index.php" class="scrollto">FoodXpert</a></h1>
       </div>
 		
 	<div class="container-fluid" style>
 		<nav id="nav-menu-container">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
 			<li>
 				<div class="dropdown1">
 					<div class="dropbtn1">Menu</div>
@@ -49,14 +37,14 @@ echo '<header id="header" class="header-scrolled">
 						  // output data of each row
 								while($row2 = $result2->fetch_assoc()) {
 										echo 
-											'<div class="dItem" id="file"><a href="category.html">' 
+											'<div class="dItem" id="file"><a href="category.php?id=' .$row2["subcategory_id"].'">' 
 											.$row2["subcategory_name"]. '</a></div>';
 								}
 								echo '</div>
 											</div>';
 							}
 							else{
-								echo '<div class="dItem"><a href="category.html">' .$row["category_name"]. '</a></div>';
+								echo '<div class="dItem"><a href="category.php?id=' .$row["category_id"].'">' .$row["category_name"]. '</a></div>';
 							}
 						}
 					  }
@@ -65,9 +53,9 @@ echo '<header id="header" class="header-scrolled">
 				  </div> 
 			</li>
 		  <li><button id="myBtn" class="dropbtn" >Log In</button></li>
-		  <li><a href="register.html">Register</a></li>
-		  <li><a href="about.html">About Us</a></li>
-		  <li><a href="cart.html">Cart</a></li>
+		  <li><a href="register.php">Register</a></li>
+		  <li><a href="about.php">About Us</a></li>
+		  <li><a href="cart.php">Cart</a></li>
 		  
         </ul>
       </nav>

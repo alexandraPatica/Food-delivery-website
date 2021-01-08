@@ -11,7 +11,8 @@
 	</head>
 	
 <body>
-	<?php include 'header.php';?>
+	<?php include 'include/header.php';?>
+	<?php include 'include/dbconnect.php';?>
 	
 	<!-- banner -->
 			<div class="banner" id="image">
@@ -80,18 +81,18 @@
 						}
 						
 						
-						$sql = "SELECT product_name, product_price, image FROM product
+						$sql = "SELECT * FROM product
 								ORDER BY order_frequency DESC;";
 						$result = $conn->query($sql);
 						$var = 0;
 						while($var<4 && $row = $result->fetch_assoc()){
-							echo '<a href="product.html"><div class="col-md-3">
+							echo '<a href="product.php?id='.$row["product_id"].'"><div class="col-md-3">
 								<!-- work item -->
 								<div class="work-item">
 									<!-- work details image -->
 									<img src="' .$row["image"]. '" alt="" style="width:300px;height:300px;"/>
 									<!-- heading -->
-									<h3><a href="product.html">'.$row["product_name"].'</a></h3>
+									<h3><a href="product.php?id='.$row["product_id"].'">'.$row["product_name"].'</a></h3>
 									<!-- brand org -->
 									<span class="org">$'.$row["product_price"].'</span>
 								</div>
