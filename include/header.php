@@ -1,5 +1,6 @@
 <?php
  include 'include/dbconnect.php';
+ session_start();
 
 echo '<header id="header" class="header-scrolled">
 		<div id="logo">
@@ -51,11 +52,26 @@ echo '<header id="header" class="header-scrolled">
 					}
 					echo '</div>
 				  </div> 
-			</li>
-		  <li><button id="myBtn" class="dropbtn" >Log In</button></li>
-		  <li><a href="register.php">Register</a></li>
-		  <li><a href="about.php">About Us</a></li>
-		  <li><a href="cart.php">Cart</a></li>
+			</li>';
+			
+			   if(!isset($_SESSION['user'])){		//if no session
+				  echo '<li><button id="myBtn" class="dropbtn" >Log In</button></li>
+						<li><a href="register.php">Register</a></li>';
+				  
+			   }
+				else{
+					$user_check = $_SESSION['user'];
+					$ses_sql ="select user_name from user where user_name = '".$user_check. "';";
+					$result_ses = $conn->query($ses_sql);
+					$row_ses = $result_ses->fetch_assoc();
+					$login_session = $row_ses['user_name'];
+					
+					echo '<li><a href="include/logout.php">Log Out</a></li></li>
+							<li><a href="account.php">'.$row_ses["user_name"].'</a></li>';
+				}
+			echo
+		  
+		 ' <li><a href="about.php">About Us</a></li>
 		  
         </ul>
       </nav>

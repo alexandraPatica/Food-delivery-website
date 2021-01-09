@@ -13,6 +13,7 @@
 <body>
 	<?php include 'include/header.php';?>
 	<?php include 'include/dbconnect.php';?>
+	<?php include 'include/loginform.php';?>
 	
 	<!-- banner -->
 			<div class="banner" id="image">
@@ -27,35 +28,7 @@
 				</div>
 			</div>
 			<!-- banner end -->
-			
-			
-			
 
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
-
-			  <!-- Modal content -->
-			  <div class="modal-content">
-				<span class="close">&times;</span>
-				
-				
-				  <form action="/action_page.php" class="form-container">
-					<h1>Login</h1>
-
-					<label for="email"><b>Email</b></label>
-					<input type="text" placeholder="Enter Email" name="email" required>
-
-					<label for="psw"><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" required>
-
-					<button type="submit" class="btn1">Login</button>
-				  </form>
-				
-			  </div>
-
-			</div>
-			
-			
 			<div class="works" id="work">
 				<div class="container">
 					<!-- default heading -->
@@ -106,36 +79,8 @@
 
  </div>
 
-</div>
-			
-<script>
-	var modal = document.getElementById("myModal");
+</div>		
 
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks on the button, open the modal
-	btn.onclick = function() {
-	  modal.style.display = "block";
-	}
-	
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	  modal.style.display = "none";
-	}
-	
-	
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	  if (event.target == modal) {
-		modal.style.display = "none";
-	  }
-	}
-</script>
 </body>
 
 </html>

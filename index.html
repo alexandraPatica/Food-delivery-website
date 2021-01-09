@@ -1,184 +1,57 @@
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>FoodXpert</title>
-		
-		<!-- Favicon -->
-		 <link href="img/favicon.png" rel="icon">
-		 
-		<!-- Style -->
-		<link href="css/style.css" rel="stylesheet">
-	</head>
-	
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Add to Cart Interaction | CodyHouse</title>
+</head>
 <body>
-	<header id="header" class='header-scrolled'>
-		<div id="logo">
-        <h1><a href="index.html" class="scrollto">FoodXpert</a></h1>
-      </div>
-		
-	<div class="container-fluid">
-		<nav id="nav-menu-container">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-			<li>
-				<div class="dropdown1">
-					<div class="dropbtn1">Menu</div>
-					<!--  Main Dropdown -->
-					<div class="dropdown-one">
-					  <div id="link1" class="dItem" href="#">Link 1
-						<!--  Inside Dropdown -->
-						<div class="dropdown-two">
-						  <a href="category.html"><div class="dItem" id="file" href="category.html">Import</div></a>
-						</div>
-					  </div>
-					  <a href="category.html"><div class="dItem" href="category.html">Link 2</div></a>
-					  <a href="category.html"><div class="dItem" href="category.html">Link 3</div></a>
-					</div>
-				  </div> 
-			</li>
-		  <li><button id="myBtn" class="dropbtn" >Log In</button></li>
-		  <li><a href="register.html">Register</a></li>
-		  <li><a href="about.html">About Us</a></li>
-		  <li><a href="cart.html">Cart</a></li>
-		  
-        </ul>
-      </nav>
-	</div>
-		
-	</header>
-	
-	<!-- banner -->
-			<div class="banner" id="image">
-				<div class="container">
-					<!-- heading -->
-					<h2>Welcome to FoodXpert!</h2>
-					<!-- sub heading -->
-					<h3>We feed your stomach and your soul!</h3>
-					<br><br><br><br>
-					<!-- access button -->
-					<a href="#work" class="btn btn-default">SEE OUR BESTS</a>
-				</div>
-			</div>
-			<!-- banner end -->
+<main class="cd-main container margin-top-xxl">
+  <div class="text-component text-center">
+    <h1>Add to Cart Interaction</h1>
+    <p class="flex flex-wrap flex-center flex-gap-xxs">
+      <a class="cd-article-link" href="https://codyhouse.co/gem/add-to-cart-interaction">📝 View Tutorial</a>
+      <a href="#0" class="cd-add-to-cart js-cd-add-to-cart" data-price="25.99">Add To Cart</a>
+    </p>
+  </div>
+</main>
+
+<div class="cd-cart cd-cart--empty js-cd-cart">
+	<a href="#0" class="cd-cart__trigger text-replace">
+		Cart
+		<ul class="cd-cart__count"> <!-- cart items count -->
+			<li>0</li>
+			<li>0</li>
+		</ul> <!-- .cd-cart__count -->
+	</a>
+
+	<div class="cd-cart__content">
+		<div class="cd-cart__layout">
+			<header class="cd-cart__header">
+				<h2>Cart</h2>
+				<span class="cd-cart__undo">Item removed. <a href="#0">Undo</a></span>
+			</header>
 			
-			
-			
-
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
-
-			  <!-- Modal content -->
-			  <div class="modal-content">
-				<span class="close">&times;</span>
-				
-				
-				  <form action="/action_page.php" class="form-container">
-					<h1>Login</h1>
-
-					<label for="email"><b>Email</b></label>
-					<input type="text" placeholder="Enter Email" name="email" required>
-
-					<label for="psw"><b>Password</b></label>
-					<input type="password" placeholder="Enter Password" name="psw" required>
-
-					<button type="submit" class="btn1">Login</button>
-				  </form>
-				
-			  </div>
-
-			</div>
-			
-			
-			<div class="works" id="work">
-				<div class="container">
-					<!-- default heading -->
-					<div class="default-heading">
-						<!-- heading -->
-						<h2>Our bests</h2>
-						<!-- paragraph -->
-						<p>Here are our most ordered dishes.</p>
-					</div>
-					<div class="row">
-						<a href="product.html"><div class="col-md-3">
-							<!-- work item -->
-							<div class="work-item">
-								<!-- work details image -->
-								<img src="img/work/1.jpg" alt="" style="width:300px;height:300px;"/>
-								<!-- heading -->
-								<h3><a href="product.html">Name</a></h3>
-								<!-- brand org -->
-								<span class="org">Price</span>
-							</div>
-						</div></a>
-						<a href="index.html"><div class="col-md-3">
-							<!-- work item -->
-							<div class="work-item">
-								<!-- work details image -->
-								<img src="img/work/1.jpg" alt="" style="width:300px;height:300px;"/>
-								<!-- heading -->
-								<h3><a href="#">Name</a></h3>
-								<!-- brand org -->
-								<span class="org">Price</span>
-							</div>
-						</div></a>
-						<a href="index.html"><div class="col-md-3">
-							<!-- work item -->
-							<div class="work-item">
-								<!-- work details image -->
-								<img src="img/work/1.jpg" alt="" style="width:300px;height:300px;"/>
-								<!-- heading -->
-								<h3><a href="#">Name</a></h3>
-								<!-- brand org -->
-								<span class="org">Price</span>
-							</div>
-						</div></a>
-						<a href="index.html"><div class="col-md-3">
-							<!-- work item -->
-							<div class="work-item">
-								<!-- work details image -->
-								<img src="img/work/1.jpg" alt="" style="width:300px;height:300px;"/>
-								<!-- heading -->
-								<h3><a href="#">Name</a></h3>
-								<!-- brand org -->
-								<span class="org">Price</span>
-							</div>
-						</div></a>
-					</div>
-				</div>
+			<div class="cd-cart__body">
+				<ul>
+					<!-- products added to the cart will be inserted here using JavaScript -->
+				</ul>
 			</div>
 
- </div>
-
-</div>
-			
-<script>
-	var modal = document.getElementById("myModal");
-
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks on the button, open the modal
-	btn.onclick = function() {
-	  modal.style.display = "block";
-	}
-	
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	  modal.style.display = "none";
-	}
-	
-	
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	  if (event.target == modal) {
-		modal.style.display = "none";
-	  }
-	}
-</script>
+			<footer class="cd-cart__footer">
+				<a href="#0" class="cd-cart__checkout">
+          <em>Checkout - $<span>0</span>
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"><line stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="3" y1="12" x2="21" y2="12"/><polyline stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="15,6 21,12 15,18 "/></g>
+            </svg>
+          </em>
+        </a>
+			</footer>
+		</div>
+	</div> <!-- .cd-cart__content -->
+</div> <!-- cd-cart -->
+<script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+<script src="assets/js/main.js"></script> 
 </body>
-
 </html>
