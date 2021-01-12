@@ -55,8 +55,7 @@
 							<div class="default-heading">
 								<!-- heading -->
 								<h2>'.$row["subcategory_name"].'</h2>
-								<!-- paragraph -->
-								<p>There are now a set available here in three<br>colours and in a banner sizes.</p>
+								
 							</div>
 							<div class="row">';
 							
