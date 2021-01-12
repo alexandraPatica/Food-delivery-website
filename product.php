@@ -48,7 +48,7 @@
 									$row_ses = $result_ses->fetch_assoc();
 									$login_session = $row_ses['user_name'];
 									
-									echo '<a href="cart.php?id='.$_GET['id'].'"><button  class="dropbtn">			Buy</button></a>';
+									echo '<a href="cart.php?id='.$_GET['id'].'"><button  class="dropbtn">Buy</button></a>';
 								}
 							
 							echo '<div id="result"></div>

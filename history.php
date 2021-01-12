@@ -28,6 +28,8 @@
 					  
 		<?php
 			
+			
+			
 			echo '<div class="title">
 						History
 					  </div>';
@@ -71,6 +73,10 @@
 						</div>
 						
 						</div>';
+						
+						echo '
+							<br>
+						  <a href="action_delete_history.php?id='.$row_orders['order_id'].'"><button  class="dropbtn">Delete from history</button></a>';
 					  
 				}
 				echo '	  </div>

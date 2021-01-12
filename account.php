@@ -106,9 +106,11 @@
 			}
 			 else
 			 { 
+				
 				echo '<div class="title">
 						Order History
 					  </div>';
+					  
 			 $result_history = $conn->query("SELECT
 					orders.order_id,
 					USER.user_name,
