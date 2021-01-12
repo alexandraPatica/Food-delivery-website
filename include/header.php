@@ -56,7 +56,8 @@ echo '<header id="header" class="header-scrolled">
 			
 			   if(!isset($_SESSION['user'])){		//if no session
 				  echo '<li><button id="myBtn" class="dropbtn" >Log In</button></li>
-						<li><a href="register.php">Register</a></li>';
+						<li><a href="register.php">Register</a></li>
+						<li><a href="about.php">About Us</a></li>';
 				  
 			   }
 				else{
@@ -68,10 +69,16 @@ echo '<header id="header" class="header-scrolled">
 					
 					echo '<li><a href="include/logout.php">Log Out</a></li></li>
 							<li><a href="account.php">'.$row_ses["user_name"].'</a></li>';
+							
+					if ($_SESSION['type'] == 1){
+						echo	'<li><a href="history.php">History</a></li>';
+					}else{
+						echo '<li><a href="about.php">About Us</a></li>';
+					}
 				}
 			echo
 		  
-		 ' <li><a href="about.php">About Us</a></li>
+		 ' 
 		  
         </ul>
       </nav>

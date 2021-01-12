@@ -154,9 +154,9 @@
 .dropdown-two {
   cursor: pointer;
   display: none;
-  position: absolute;
+  position: relative;
   left: 160px;
-  top: 0px;
+  top: 50px;
   min-width: 160px;
   background-color: #f9f9f9;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);

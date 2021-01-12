@@ -33,14 +33,13 @@
 							<div class="default-heading">
 								<!-- heading -->
 								<h2>'.$row["product_name"].'</h2>
-								<!-- paragraph -->
-								<p>There are now a set available here in three<br>colours and in a banner sizes.</p>
 							</div>
 							
 							<div style="margin: 100px;">
 							<img src="'.$row["image"].'" alt="Smiley face" style="float:left;width:400px;height:400px;">
-							<p>Ingredients: '.$row["ingredients"].'</p>
-							<p>Price: $'.$row["product_price"].'</p>';
+							<p>			Ingredients: '.$row["ingredients"].'</p>
+							<p>			Quantity: '.$row["product_quantity"].'</p>
+							<p>			Price: $'.$row["product_price"].'</p>';
 							
 							if(isset($_SESSION['user'])){		//if  session
 									$user_check = $_SESSION['user'];
@@ -49,7 +48,7 @@
 									$row_ses = $result_ses->fetch_assoc();
 									$login_session = $row_ses['user_name'];
 									
-									echo '<a href="cart.php?id='.$_GET['id'].'"><button  class="dropbtn">Buy</button></a>';
+									echo '<a href="cart.php?id='.$_GET['id'].'"><button  class="dropbtn">			Buy</button></a>';
 								}
 							
 							echo '<div id="result"></div>
